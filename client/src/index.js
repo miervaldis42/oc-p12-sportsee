@@ -1,8 +1,13 @@
 // Imports
 import React from "react";
 import ReactDOM from "react-dom/client";
+import { BrowserRouter as Router } from "react-router-dom";
 
-// Stylesheets
+// Component
+import Layout from "./pages/layouts/PageLayout";
+import App from "./router/App";
+
+// Stylesheet
 import "./index.scss";
 
 // Analytics
@@ -12,7 +17,11 @@ import reportWebVitals from "./reportWebVitals";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <>App</>
+    <Router>
+      <Layout>
+        <App />
+      </Layout>
+    </Router>
   </React.StrictMode>
 );
 
