@@ -1,0 +1,40 @@
+{
+  "name": "oc-p12-sportsee",
+  "version": "0.1.0",
+  "description": "Project for SportSee company",
+  "main": "./client/src/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/miervaldis42/oc-p12-sportsee.git"
+  },
+  "keywords": [
+    "OpenClassrooms",
+    "oc",
+    "Project 12",
+    "p12",
+    "react",
+    "node",
+    "node.js",
+    "redcharts",
+    "docker"
+  ],
+  "author": "miervaldis42",
+  "license": "ISC",
+  "scripts": {
+    "install-client": "cd client && npm i",
+    "install-server": "cd server && npm i",
+    "install-all": "npm i && npm run install-server & npm run install-client",
+    "server-dev": "cd server && npm run dev",
+    "server": "cd server && npm start",
+    "client": "cd client && npm start",
+    "dev": "npm run install-all && concurrently \"npm run server-dev\" \"npm run client\"",
+    "start": "npm run install-all && concurrently \"npm run server\" \"npm run client\""
+  },
+  "bugs": {
+    "url": "https://github.com/miervaldis42/oc-p12-sportsee/issues"
+  },
+  "homepage": "https://github.com/miervaldis42/oc-p12-sportsee#readme",
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
