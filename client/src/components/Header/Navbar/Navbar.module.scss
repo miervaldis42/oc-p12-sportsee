@@ -1,0 +1,30 @@
+// Main Stylesheet
+@use "src/index" as mainStyles;
+
+// 'Navbar' Styles
+.navbar {
+  display: contents;
+
+  ul {
+    display: flex;
+    flex-grow: 1;
+    justify-content: space-around;
+
+    list-style: none;
+
+    li a {
+      font-size: 24px;
+      font-weight: 500;
+      color: mainStyles.$color-white;
+
+      &:hover {
+        font-weight: bold;
+        color: mainStyles.$color-primary;
+      }
+
+      &.active {
+        color: mainStyles.$color-primary;
+      }
+    }
+  }
+}
