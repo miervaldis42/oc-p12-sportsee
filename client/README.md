@@ -10,6 +10,7 @@ This repo contains all the source code to **_run the website of SportSee dashboa
 ## 🧑‍💻 Stack
 
 - [React](https://react.dev/)
+- [SASS](https://sass-lang.com/)
 
 ## 🚀 Project Commands
 
