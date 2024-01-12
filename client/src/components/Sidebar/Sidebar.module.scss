@@ -1,0 +1,33 @@
+// Main Stylesheet
+@use "src/index" as mainStyles;
+
+// 'Sidebar' Styles
+#sidebar {
+  position: fixed;
+
+  width: 120px;
+  height: -webkit-fill-available;
+  height: -moz-available;
+
+  display: grid;
+  justify-content: center;
+  align-items: center;
+
+  color: mainStyles.$color-white;
+  background-color: mainStyles.$color-black;
+
+  padding-bottom: 32px;
+  margin-top: 95px;
+
+  nav {
+    display: grid;
+    justify-content: center;
+  }
+
+  footer {
+    white-space: nowrap;
+
+    transform: rotate(-90deg);
+    -moz-transform: rotate(-90deg);
+  }
+}
