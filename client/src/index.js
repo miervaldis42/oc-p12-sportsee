@@ -1,10 +1,8 @@
 // Imports
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { BrowserRouter as Router } from "react-router-dom";
 
 // Component
-import Layout from "./pages/layouts/PageLayout";
 import App from "./router/App";
 
 // Stylesheet
@@ -17,11 +15,7 @@ import reportWebVitals from "./reportWebVitals";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <Router>
-      <Layout>
-        <App />
-      </Layout>
-    </Router>
+    <App />
   </React.StrictMode>
 );
 
