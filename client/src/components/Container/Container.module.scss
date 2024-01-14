@@ -1,6 +1,4 @@
 .container {
-  background-color: blue; // for visual tests
-
   height: calc(
     100vh - 232px
   ); // 232px is the (height + padding top&bottom) of the <Header /> + the (width + padding) of the <Sidebar />

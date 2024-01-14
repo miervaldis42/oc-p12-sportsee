@@ -1,18 +1,16 @@
 // Components
 import Header from "../../components/Header/Header";
 import Sidebar from "../../components/Sidebar/Sidebar";
-
-// Stylesheet
-import styles from "./PageLayout.module.scss";
+import Container from "../../components/Container/Container";
 
 // Layout - Page
-function PageLayout({ children }) {
+function PageLayout() {
   return (
     <>
       <Header />
       <Sidebar />
 
-      <main className={styles.container}>{children}</main>
+      <Container />
     </>
   );
 }
