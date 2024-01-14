@@ -1,8 +1,5 @@
-// Assets
-import { ReactComponent as Logo } from "../../assets/logo.svg";
-import { ReactComponent as Brand } from "../../assets/brand.svg";
-
 // Components
+import LogoArea from "./LogoArea/LogoArea";
 import Navbar from "./Navbar/Navbar";
 
 // Stylesheet
@@ -11,12 +8,8 @@ import styles from "./Header.module.scss";
 // 'Header' Component
 function Header() {
   return (
-    <header aria-label="Website header">
-      <a href="/" aria-label="SportSee logo" className={styles["logo-area"]}>
-        <Logo />
-        <Brand />
-      </a>
-
+    <header aria-label="Website header" className={styles.header}>
+      <LogoArea />
       <Navbar />
     </header>
   );
