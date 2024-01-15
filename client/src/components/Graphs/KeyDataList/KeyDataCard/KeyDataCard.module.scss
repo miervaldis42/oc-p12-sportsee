@@ -1,0 +1,54 @@
+// Main Stylesheet
+@use "src/index" as mainStyles;
+
+// 'Keydata Item' Styles
+.keydata-card {
+  width: 258px;
+
+  display: flex;
+  align-items: center;
+
+  background-color: #fbfbfb;
+  border-radius: 5px;
+
+  padding: 32px;
+  margin-bottom: 38px;
+
+  &:last-child {
+    margin: 0;
+  }
+
+  .keydata-icon-zone {
+    width: 60px;
+    height: 60px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 6px;
+  }
+
+  .keydata-info-area {
+    flex-direction: column;
+
+    margin-left: 24px;
+
+    p {
+      font-weight: bold;
+
+      margin: 0;
+
+      &:first-child {
+        font-size: 20px;
+
+        margin-bottom: 4px;
+      }
+
+      &:last-child {
+        font-size: 14px;
+        color: mainStyles.$color-grey;
+      }
+    }
+  }
+}
