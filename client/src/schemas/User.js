@@ -1,3 +1,9 @@
+// Imports
+import apple from "../assets/apple.svg";
+import protein from "../assets/protein.svg";
+import energy from "../assets/energy.svg";
+import cheeseburger from "../assets/cheeseburger.svg";
+
 /**
  * Class representing a user.
  */
@@ -29,22 +35,30 @@ class User {
       {
         name: "Calories",
         measure: "kCal",
+        img: energy,
         quantity: data.keyData.calorieCount,
+        backgroundColor: "rgba(255, 0, 0, 0.1)",
       },
       {
         name: "Proteines",
         measure: "g",
+        img: protein,
         quantity: data.keyData.proteinCount,
+        backgroundColor: "rgba(74, 184, 255, 0.1)",
       },
       {
         name: "Glucides",
         measure: "g",
+        img: apple,
         quantity: data.keyData.carbohydrateCount,
+        backgroundColor: "rgba(249, 206, 35, 0.1)",
       },
       {
         name: "Lipides",
         measure: "g",
+        img: cheeseburger,
         quantity: data.keyData.lipidCount,
+        backgroundColor: "rgba(253, 81, 129, 0.1)",
       },
     ];
   }
