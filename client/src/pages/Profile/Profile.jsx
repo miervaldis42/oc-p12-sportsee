@@ -6,10 +6,14 @@ import ROUTESLIST from "../../router/routesList";
 import { useParams, useNavigate } from "react-router-dom";
 
 // Components
+import KeyDataList from "../../components/Graphs/KeyDataList/KeyDataList";
 import Error from "../../components/Container/Error/Error";
 
 // Services
 import apiHandler from "../../services/apiHandler";
+
+// Stylesheet
+import styles from "./Profile.module.scss";
 
 // 'Profile' Page
 function Profile() {
@@ -57,6 +61,16 @@ function Profile() {
           </h1>
 
           <p>{todayMessage}</p>
+
+          <section
+            aria-label={`Sport data linked to ${user.firstname}`}
+            className={styles["graph-section"]}
+          >
+            <KeyDataList
+              aria-label={`List of ${user.firstname}'s calories, proteins, carbohydrate and lipids`}
+              data={user.keyDatas}
+            />
+          </section>
         </>
       )}
 
