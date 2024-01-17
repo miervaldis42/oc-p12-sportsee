@@ -4,13 +4,13 @@
 
 .graph-section {
   display: flex;
+  justify-content: space-between;
 
   margin-top: 77px;
 
   .chart-section {
-    width: 60%;
-
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-between;
   }
 }

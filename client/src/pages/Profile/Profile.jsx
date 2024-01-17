@@ -7,6 +7,7 @@ import { useParams, useNavigate } from "react-router-dom";
 
 // Components
 import Activity from "../../components/Graphs/Activity/Activity";
+import AverageTimeSessions from "../../components/Graphs/AverageTimeSessions/AverageTimeSessions";
 import KeyDataList from "../../components/Graphs/KeyDataList/KeyDataList";
 import Error from "../../components/Container/Error/Error";
 
@@ -56,6 +57,12 @@ function Profile() {
           userInfo.activities = resActivityData[1];
         }
 
+        // Retrieve the average time of the user sessions
+        const resAverageSessions = await apiHandler(userId, "average-sessions");
+        if (resUserInfo[0] && resAverageSessions[0]) {
+          userInfo.sessions = resAverageSessions[1];
+        }
+
         setUser(userInfo);
       } else {
         setError({ status: 401 });
@@ -84,6 +91,8 @@ function Profile() {
               className={styles["chart-section"]}
             >
               <Activity data={user.activities} />
+
+              <AverageTimeSessions data={user.sessions} />
             </section>
 
             <KeyDataList
