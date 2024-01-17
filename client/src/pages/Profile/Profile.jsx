@@ -6,6 +6,7 @@ import ROUTESLIST from "../../router/routesList";
 import { useParams, useNavigate } from "react-router-dom";
 
 // Components
+import Activity from "../../components/Graphs/Activity/Activity";
 import KeyDataList from "../../components/Graphs/KeyDataList/KeyDataList";
 import Error from "../../components/Container/Error/Error";
 
@@ -23,33 +24,45 @@ function Profile() {
 
   // States
   const [user, setUser] = useState(null);
-  const [error, setError] = useState(null);
   const [todayMessage, setTodayMessage] = useState(
     "Bienvenue sur votre profil !"
   );
 
+  const [error, setError] = useState(null);
+
   // Get user info
   useEffect(() => {
-    const fetchData = async () => {
+    const fetchUserInfo = async () => {
       if (Number(userId)) {
-        const res = await apiHandler(userId, "");
+        // Retrieve genral info on the user
+        const resUserInfo = await apiHandler(userId, "");
 
-        if (res[0]) {
-          setUser(res[1]);
+        let userInfo = null;
+        if (resUserInfo[0]) {
+          userInfo = resUserInfo[1];
           setTodayMessage(
             "Félicitations ! Vous avez explosé vos objectifs hier 👏"
           );
-        } else if (!res[0] && res[1] === "erreur") {
+        } else if (!resUserInfo[0] && resUserInfo[1] === "erreur") {
           navigate(ROUTESLIST.error400.path);
         } else {
-          setError(res[1]);
+          setError(resUserInfo[1]);
+          return;
         }
+
+        // Retrieve the activity data of the user
+        const resActivityData = await apiHandler(userId, "activity");
+        if (resUserInfo[0] && resActivityData[0]) {
+          userInfo.activities = resActivityData[1];
+        }
+
+        setUser(userInfo);
       } else {
         setError({ status: 401 });
       }
     };
 
-    fetchData();
+    fetchUserInfo();
   }, [navigate, userId]);
 
   return (
@@ -60,12 +73,19 @@ function Profile() {
             Bonjour <span>{user.firstname}</span>
           </h1>
 
-          <p>{todayMessage}</p>
+          <p className={styles["today-message"]}>{todayMessage}</p>
 
           <section
             aria-label={`Sport data linked to ${user.firstname}`}
             className={styles["graph-section"]}
           >
+            <section
+              aria-label={`Graphics & Charts related to ${user.firstname}`}
+              className={styles["chart-section"]}
+            >
+              <Activity data={user.activities} />
+            </section>
+
             <KeyDataList
               aria-label={`List of ${user.firstname}'s calories, proteins, carbohydrate and lipids`}
               data={user.keyDatas}
