@@ -31,6 +31,8 @@ class User {
     this.age = data.userInfos.age;
     this.todayScore = data.todayScore || data.score;
 
+    this.activities = [];
+
     this.keyDatas = [
       {
         name: "Calories",
