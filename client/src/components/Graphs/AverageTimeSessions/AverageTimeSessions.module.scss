@@ -1,0 +1,55 @@
+// Main Stylesheet
+@use "src/index" as mainStyles;
+
+// 'Average Time Sesssion Graph' Styles
+.custom-tooltip {
+  font-size: 8px;
+  font-weight: 500;
+  color: mainStyles.$color-black;
+  text-align: center;
+  line-height: 24px;
+
+  background-color: mainStyles.$color-white;
+
+  width: 39px;
+  height: 25px;
+  border-color: transparent;
+}
+
+.sessions-area {
+  position: relative;
+
+  width: 258px !important;
+  height: 263px !important;
+
+  background-color: mainStyles.$color-primary;
+  border-radius: 5px;
+
+  &.no-data {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    svg path {
+      fill: mainStyles.$color-white;
+    }
+
+    p {
+      font-style: italic;
+      color: mainStyles.$color-white;
+    }
+  }
+
+  h2 {
+    position: absolute;
+
+    font-size: 15px;
+    font-weight: bold;
+    color: mainStyles.$color-white;
+
+    margin: 29px 0 0 34px;
+  }
+}
