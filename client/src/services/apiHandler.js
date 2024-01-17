@@ -19,6 +19,7 @@ async function apiHandler(userId, apiRoute) {
             const formattedUserData = new User(data);
             return [true, formattedUserData];
           case "activity":
+          case "average-sessions":
             const userActivityData = data.sessions;
             return [true, userActivityData];
           default:
