@@ -1,0 +1,77 @@
+// Main Stylesheet
+@use "src/index" as mainStyles;
+
+// 'Activity Graph' Styles
+.activity {
+  width: 835px !important;
+  height: 320px !important;
+
+  background-color: #fbfbfb;
+  border-radius: 5px;
+
+  padding: 24px 32px;
+  margin-bottom: 50px;
+
+  &.no-data {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    p {
+      font-style: italic;
+    }
+  }
+
+  .custom-tooltip {
+    width: 39px;
+    height: 63px;
+
+    font-size: 7px;
+    font-style: normal;
+    font-weight: 500;
+    color: #ffffff;
+    line-height: 24px;
+    text-align: center;
+
+    background-color: mainStyles.$color-primary;
+  }
+
+  .activity-legend-container {
+    display: flex;
+    align-items: center;
+
+    .activity-title {
+      font-weight: bold;
+      font-size: 15px;
+      line-height: 24px;
+    }
+
+    .activity-legend {
+      display: flex;
+      align-items: center;
+
+      .legend-circle {
+        width: 8px;
+        height: 8px;
+
+        border-radius: 50%;
+
+        margin-right: 10px;
+        margin-left: 20px;
+      }
+
+      span {
+        font-size: 14px;
+        font-weight: 500;
+        color: rgba(116, 121, 140, 1);
+
+        margin-right: 20px;
+      }
+    }
+
+    .flex-1 {
+      flex: 1;
+    }
+  }
+}
