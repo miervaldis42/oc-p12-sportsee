@@ -12,10 +12,18 @@ async function apiHandler(userId, apiRoute) {
 
       if (response.ok) {
         const res = await response.json();
-        const userData = await res.data;
-        const formattedUserData = new User(userData);
+        const data = await res.data;
 
-        return [true, formattedUserData];
+        switch (apiRoute) {
+          case "":
+            const formattedUserData = new User(data);
+            return [true, formattedUserData];
+          case "activity":
+            const userActivityData = data.sessions;
+            return [true, userActivityData];
+          default:
+            return;
+        }
       } else {
         let customError = {
           status: response.status,
