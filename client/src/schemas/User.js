@@ -32,6 +32,7 @@ class User {
     this.todayScore = data.todayScore || data.score;
 
     this.activities = [];
+    this.sessions = [];
 
     this.keyDatas = [
       {
