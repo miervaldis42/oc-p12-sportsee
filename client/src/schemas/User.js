@@ -33,6 +33,7 @@ class User {
 
     this.activities = [];
     this.sessions = [];
+    this.performances = {};
 
     this.keyDatas = [
       {
