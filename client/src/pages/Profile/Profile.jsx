@@ -9,6 +9,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import Activity from "../../components/Graphs/Activity/Activity";
 import AverageTimeSessions from "../../components/Graphs/AverageTimeSessions/AverageTimeSessions";
 import Performance from "../../components/Graphs/Performance/Performance";
+import Goal from "../../components/Graphs/Goal/Goal";
 import KeyDataList from "../../components/Graphs/KeyDataList/KeyDataList";
 import Error from "../../components/Container/Error/Error";
 
@@ -101,6 +102,7 @@ function Profile() {
 
               <AverageTimeSessions data={user.sessions} />
               <Performance data={user.performances} />
+              <Goal data={user.todayScore} />
             </section>
 
             <KeyDataList

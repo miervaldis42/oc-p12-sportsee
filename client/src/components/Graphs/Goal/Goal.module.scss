@@ -1,0 +1,50 @@
+.goal-card {
+  position: relative;
+
+  width: 258px !important;
+  height: 263px !important;
+
+  text-align: center;
+
+  background-color: #fbfbfb;
+  border-radius: 5px;
+
+  &.no-data {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+  }
+
+  .goal-title {
+    position: absolute;
+    top: 2%;
+    left: 8%;
+
+    font-size: 15px;
+    font-weight: bold;
+  }
+
+  .score-container {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    height: 100%;
+
+    .score {
+      font-size: 26px;
+      font-weight: 800;
+    }
+
+    .description {
+      font-size: 16px;
+      color: rgba(116, 121, 140, 1);
+      padding-left: 10%;
+      padding-right: 10%;
+      line-height: 26px;
+    }
+  }
+}
