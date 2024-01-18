@@ -8,6 +8,7 @@ import { useParams, useNavigate } from "react-router-dom";
 // Components
 import Activity from "../../components/Graphs/Activity/Activity";
 import AverageTimeSessions from "../../components/Graphs/AverageTimeSessions/AverageTimeSessions";
+import Performance from "../../components/Graphs/Performance/Performance";
 import KeyDataList from "../../components/Graphs/KeyDataList/KeyDataList";
 import Error from "../../components/Container/Error/Error";
 
@@ -63,6 +64,12 @@ function Profile() {
           userInfo.sessions = resAverageSessions[1];
         }
 
+        // Retrieve the performances of the user
+        const resPerformance = await apiHandler(userId, "performance");
+        if (resUserInfo[0] && resPerformance[0]) {
+          userInfo.performances = resPerformance[1];
+        }
+
         setUser(userInfo);
       } else {
         setError({ status: 401 });
@@ -93,6 +100,7 @@ function Profile() {
               <Activity data={user.activities} />
 
               <AverageTimeSessions data={user.sessions} />
+              <Performance data={user.performances} />
             </section>
 
             <KeyDataList
