@@ -6,6 +6,28 @@ async function apiHandler(userId, apiRoute) {
   const url = "http://localhost:3000/user";
   const apiRoutes = ["", "activity", "average-sessions", "performance"];
 
+  if (userId === "1") {
+    const mockEmptyData = {
+      id: 1,
+      userInfos: {
+        firstName: "Thierry",
+        lastName: "Henry",
+        age: 46,
+      },
+      todayScore: null,
+      keyData: {
+        calorieCount: null,
+        proteinCount: null,
+        carbohydrateCount: null,
+        lipidCount: null,
+      },
+    };
+
+    const mockUserWithEmptyData = new User(mockEmptyData);
+
+    return [true, mockUserWithEmptyData];
+  }
+
   if (apiRoutes.includes(apiRoute)) {
     try {
       const response = await fetch(`${url}/${userId}/${apiRoute}`);

@@ -19,7 +19,7 @@ function KeyDataCard({ icon, bgColor, quantity, measure, name }) {
         aria-label={`${name} - User key data information`}
         className={styles["keydata-info-area"]}
       >
-        <p>{`${quantity}${measure}`}</p>
+        <p>{`${quantity ?? "- "}${measure}`}</p>
         <p>{name}</p>
       </div>
     </li>
