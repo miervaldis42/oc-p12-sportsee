@@ -1,15 +1,14 @@
 # OpenClassrooms - Project 12
 
-## Table of Contents
-
-- [📖 Project](#-project)
-- [🧑‍💻 Stack](#-stack)
-- [🚀 Project Commands](#-project-commands)
-
-## 📖 Project
-
 This project is the 12th project of OpenClassrooms JavaScript - React Developer Program.\
 The objective is to create a React project populated with graphs created with a 3rd-party library.
+
+## Table of Contents
+
+- [🧑‍💻 Stack](#-stack)
+- [🚀 Project](#-project)
+  - [📋 Breakdown](#-breakdown)
+  - [🎛️ Commands](#-commands)
 
 [🔼 Back to the Table of Contents](#table-of-contents)
 
@@ -24,7 +23,20 @@ Here is the stack used in the project :
 
 [🔼 Back to the Table of Contents](#table-of-contents)
 
-## 🚀 Project Commands
+## 🚀 Project
+
+### 📋 Breakdown
+
+The project is made up of :
+
+- 🌅 Front-end : [Client](./client/README.md)
+  - _For the time being, only contain the **Profile**, **400** & **500** pages_
+- 🌇 Back-end : [Server](./server/README.md)
+  - _For the time being, only contain **3 users**: 1, 12 & 18_
+
+The `package.json` file at the **root of the project** is mainly there to manage both parts of the app from the root.
+
+### 🎛️ Commands
 
 To start the website, do the following :
 
