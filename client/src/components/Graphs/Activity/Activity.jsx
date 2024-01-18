@@ -86,7 +86,7 @@ const Activity = ({ data }) => {
     );
 
     return (
-      <ResponsiveContainer className={styles.activity}>
+      <ResponsiveContainer className={styles["activity-card"]}>
         <BarChart
           width={500}
           height={300}
@@ -163,7 +163,7 @@ const Activity = ({ data }) => {
     );
   } else {
     return (
-      <div className={`${styles.activity} ${styles["no-data"]}`}>
+      <div className={`${styles["activity-card"]} ${styles["no-data"]}`}>
         <CyclingIcon />
 
         <p>Un peu de sport vous fera le plus grand bien !</p>

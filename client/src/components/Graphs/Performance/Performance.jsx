@@ -33,8 +33,7 @@ import styles from "./Performance.module.scss";
  * @returns {Performance} Returns Performance component
  */
 const Performance = ({ data }) => {
-  console.log("d", data);
-  if (data !== null && data.performances !== undefined) {
+  if (data !== null && Object.keys(data.performances).length > 0) {
     /**
      * Component for showing custom tooltip on performance chart
      *
@@ -60,7 +59,7 @@ const Performance = ({ data }) => {
         <RadarChart
           cx="50%"
           cy="50%"
-          outerRadius="80%"
+          outerRadius="60%"
           data={data.performances}
           startAngle={90}
           endAngle={-270}

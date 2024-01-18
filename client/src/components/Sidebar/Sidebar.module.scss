@@ -6,8 +6,9 @@
   position: fixed;
 
   width: 120px;
-  height: -webkit-fill-available;
-  height: -moz-available;
+  height: calc(
+    100vh - 95px - 32px
+  ); // viewport height - (header height + padding top & bottom) - sidebar padding bottom
 
   display: grid;
   justify-content: center;

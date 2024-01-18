@@ -84,7 +84,7 @@ function Error({ error }) {
           <span>tests d'efforts intenses</span> pour attester de sa robustesse.
           <br />
           <br />
-          Nous vous préviendrons quand elle sera disponible 🤙
+          Nous vous tiendrons au courant quand elle sera disponible 🤙
         </p>
       );
       break;

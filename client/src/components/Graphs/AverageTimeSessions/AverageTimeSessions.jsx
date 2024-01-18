@@ -73,7 +73,7 @@ const AverageTimeSessions = ({ data }) => {
     };
 
     return (
-      <ResponsiveContainer className={styles["sessions-area"]}>
+      <ResponsiveContainer className={styles["sessions-card"]}>
         <h2 className={styles["activity-title"]}>Durée moyenne des sessions</h2>
 
         <LineChart
@@ -118,10 +118,10 @@ const AverageTimeSessions = ({ data }) => {
     );
   } else {
     return (
-      <div className={`${styles["sessions-area"]} ${styles["no-data"]}`}>
+      <div className={`${styles["sessions-card"]} ${styles["no-data"]}`}>
         <SwimmingIcon />
 
-        <p>N'oubliez pas d'allumer votre montre fitness ⌚</p>
+        <p>N'oubliez pas d'activer votre montre fitness ⌚</p>
       </div>
     );
   }

@@ -2,8 +2,7 @@
 @use "src/index" as mainStyles;
 
 // 'Activity Graph' Styles
-.activity {
-  width: 50vw !important;
+.activity-card {
   height: 320px !important;
 
   background-color: #fbfbfb;
@@ -13,6 +12,9 @@
   margin-bottom: 50px;
 
   &.no-data {
+    width: -webkit-fill-available;
+    width: -moz-available;
+
     display: flex;
     flex-direction: column;
     justify-content: center;
