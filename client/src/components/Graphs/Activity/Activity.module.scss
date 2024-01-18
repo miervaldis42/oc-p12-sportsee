@@ -3,7 +3,7 @@
 
 // 'Activity Graph' Styles
 .activity {
-  width: 835px !important;
+  width: 50vw !important;
   height: 320px !important;
 
   background-color: #fbfbfb;
@@ -17,10 +17,6 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
-    p {
-      font-style: italic;
-    }
   }
 
   .custom-tooltip {
