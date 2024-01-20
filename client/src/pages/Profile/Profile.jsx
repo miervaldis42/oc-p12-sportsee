@@ -40,9 +40,9 @@ function Profile() {
         // Retrieve genral info on the user
         const resUserInfo = await apiHandler(userId, "");
 
-        let userInfo = null;
+        let userData = null;
         if (resUserInfo[0]) {
-          userInfo = resUserInfo[1];
+          userData = resUserInfo[1];
           setTodayMessage(
             "Félicitations ! Vous avez explosé vos objectifs hier 👏"
           );
@@ -56,22 +56,22 @@ function Profile() {
         // Retrieve the activity data of the user
         const resActivityData = await apiHandler(userId, "activity");
         if (resUserInfo[0] && resActivityData[0]) {
-          userInfo.activities = resActivityData[1];
+          userData.activities = resActivityData[1].activities;
         }
 
         // Retrieve the average time of the user sessions
         const resAverageSessions = await apiHandler(userId, "average-sessions");
         if (resUserInfo[0] && resAverageSessions[0]) {
-          userInfo.sessions = resAverageSessions[1];
+          userData.sessions = resAverageSessions[1].sessions;
         }
 
         // Retrieve the performances of the user
         const resPerformance = await apiHandler(userId, "performance");
         if (resUserInfo[0] && resPerformance[0]) {
-          userInfo.performances = resPerformance[1];
+          userData.performances = resPerformance[1];
         }
 
-        setUser(userInfo);
+        setUser(userData);
       } else {
         setError({ status: 401 });
       }

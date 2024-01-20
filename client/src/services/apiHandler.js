@@ -1,32 +1,13 @@
 // Schemas
 import User from "../schemas/User";
+import Activities from "../schemas/Activities";
+import AverageSessions from "../schemas/AverageSessions";
+import Performances from "../schemas/Performances";
 
 // Services - API
 async function apiHandler(userId, apiRoute) {
   const url = "http://localhost:3000/user";
   const apiRoutes = ["", "activity", "average-sessions", "performance"];
-
-  if (userId === "1") {
-    const mockEmptyData = {
-      id: 1,
-      userInfos: {
-        firstName: "Thierry",
-        lastName: "Henry",
-        age: 46,
-      },
-      todayScore: null,
-      keyData: {
-        calorieCount: null,
-        proteinCount: null,
-        carbohydrateCount: null,
-        lipidCount: null,
-      },
-    };
-
-    const mockUserWithEmptyData = new User(mockEmptyData);
-
-    return [true, mockUserWithEmptyData];
-  }
 
   if (apiRoutes.includes(apiRoute)) {
     try {
@@ -41,52 +22,13 @@ async function apiHandler(userId, apiRoute) {
             const formattedUserData = new User(data);
             return [true, formattedUserData];
           case "activity":
-          case "average-sessions":
-            const userActivityData = data.sessions;
+            const userActivityData = new Activities(data);
             return [true, userActivityData];
+          case "average-sessions":
+            const userSessionsData = new AverageSessions(data);
+            return [true, userSessionsData];
           case "performance":
-            const userPerformanceData = {
-              performances: [],
-              kind: {},
-            };
-
-            // Transform performances array
-            data.data.forEach((item) => {
-              userPerformanceData.performances.push({
-                value: item.value,
-                kind: item.kind,
-              });
-            });
-
-            // Transform kind object
-            Object.keys(data.kind).forEach((key) => {
-              userPerformanceData.kind[key] = {
-                name: translateKindInto(data.kind[key], "fr"),
-                order: 7 - parseInt(key), // As the order is in reverse (6, 5, 4, 3, 2, 1)
-              };
-            });
-
-            function translateKindInto(kind, language) {
-              if (language === "fr") {
-                switch (kind) {
-                  case "cardio":
-                    return "Cardio";
-                  case "energy":
-                    return "Energie";
-                  case "endurance":
-                    return "Endurance";
-                  case "strength":
-                    return "Force";
-                  case "speed":
-                    return "Vitesse";
-                  case "intensity":
-                    return "Intensité";
-                  default:
-                    return;
-                }
-              }
-            }
-
+            const userPerformanceData = new Performances(data);
             return [true, userPerformanceData];
           default:
             return;
