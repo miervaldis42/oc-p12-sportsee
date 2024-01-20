@@ -29,39 +29,35 @@ class User {
     this.firstname = data.userInfos.firstName;
     this.lastname = data.userInfos.lastName;
     this.age = data.userInfos.age;
-    this.todayScore = data.todayScore || data.score;
-
-    this.activities = [];
-    this.sessions = [];
-    this.performances = {};
+    this.todayScore = data.todayScore ?? data.score ?? null;
 
     this.keyDatas = [
       {
         name: "Calories",
         measure: "kCal",
         img: energy,
-        quantity: data.keyData.calorieCount,
+        quantity: data.keyData.calorieCount ?? null,
         backgroundColor: "rgba(255, 0, 0, 0.1)",
       },
       {
         name: "Proteines",
         measure: "g",
         img: protein,
-        quantity: data.keyData.proteinCount,
+        quantity: data.keyData.proteinCount ?? null,
         backgroundColor: "rgba(74, 184, 255, 0.1)",
       },
       {
         name: "Glucides",
         measure: "g",
         img: apple,
-        quantity: data.keyData.carbohydrateCount,
+        quantity: data.keyData.carbohydrateCount ?? null,
         backgroundColor: "rgba(249, 206, 35, 0.1)",
       },
       {
         name: "Lipides",
         measure: "g",
         img: cheeseburger,
-        quantity: data.keyData.lipidCount,
+        quantity: data.keyData.lipidCount ?? null,
         backgroundColor: "rgba(253, 81, 129, 0.1)",
       },
     ];
