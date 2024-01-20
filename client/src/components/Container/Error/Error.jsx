@@ -68,7 +68,8 @@ function Error({ error }) {
       error.message = (
         <p>
           C'est ce que notre serveur vient de décider de faire...
-          <br /> Revenez plus tard pour voir s'il a changé d'avis 😅
+          <br /> Revenez <span>plus tard</span> pour voir s'il a changé d'avis
+          😅
         </p>
       );
       break;
